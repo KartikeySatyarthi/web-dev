@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    	<link rel="stylesheet"
+		  th:href="@{/css/styles1.css}" />
+    <script src="https://kit.fontawesome.com/2caebbbafd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <div class="Navbar">
+            <div class="leftSide">
+            <form action="ss" method="get" class="Navbar" placeholder="company">
+            	<input type="text" name="value">
+            	<input type="submit">
+            </form>
+		             
+               
+            </div>
+            <div class="rightSide">
+              <div class="links">
+                <a href="/gainers">Market Gainers</a>
+                <a href="/losers">Market Losers</a>
+                <a href="/indices ">Market Indices</a>
+              </div>
+            </div>
+        </div>
+        <div class="basic">
+            <div class="leftSide">
+                <h1 id="companyName" th:text="${es.longName}"></h1>
+            </div>
+            <div class="rightSide">
+                <h1 id="companyPrice"th:text="${es.ask}"></h1>
+            </div>
+        </div>
+        <div class="container-big">
+            <div class="item-big">
+                <div class="summary">
+                    <h3>Price Summary</h3>
+                    <div class="gridDiv">
+                      <div class="today-high">
+                        <small>TODAY'S HIGH</small>
+                        <p th:text="${es.regularMarketDayHigh}"></p>
+                      </div>
+                      <div class="today-low">
+                        <small>TODAY'S LOW</small>
+                        <p  th:text="${es.regularMarketDayLow}"></p>
+                      </div>
+                      <div class="weekHigh">
+                        <small>52 WEEK HIGH</small>
+                        <p th:text="${es.fiftyTwoWeekHigh}"></p>
+                      </div>
+                      <div class="weekLow">
+                        <small>52 WEEK LOW</small>
+                        <p th:text="${es.fiftyTwoWeekLow}"></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-big">
+                <div class="parameters">
+                    <h3>Company Essentials</h3>
+                    <div class="container">
+                      <div class="item">
+                        <small>MARKET CAP</small>
+                        <p id="marketcap" th:text="${es.marketCap}"> </p>
+                      </div>
+                      <div class="item">
+                        <small>NO. OF SHARES</small>
+                        <p id="noofshares" th:text="${es.sharesOutstanding}"></p>
+                      </div>
+                      <div class="item">
+                        <small>P/E RATIO</small>
+                        <p id="peratio" th:text="${es.trailingPE}"></p>
+                      </div>
+                      <div class="item">
+                        <small>P/B RATIO</small>
+                        <p id="pbratio" th:text="${es.priceToBook}"></p>
+                      </div>
+                      <div class="item">
+                        <small>DIV. YIELD</small>
+                        <p id="dividendyield" th:text="${es.trailingAnnualDividendYield}">%</p>
+                      </div>
+                      <div class="item">
+                        <small>BOOK VALUE</small>
+                        <p id="bookvalue" th:text="${es.bookValue}">₹ </p>
+                      </div>
+                      <div class="item">
+                        <small>EPS</small>
+                        <p id="eps" th:text="${es.epsTrailingTwelveMonths}"></p>
+                      </div>
+                      <div class="item">
+                        <small>50 DAY MOVING AVERAGE</small>
+                        <p id="50dma" th:text="${es.fiftyDayAverage}">₹</p>
+                      </div>
+                      <div class="item">
+                        <small>200 DAY MOVING AVERAGE</small>
+                        <p id="200dma" th:text="${es.twoHundredDayAverage}">₹ </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
